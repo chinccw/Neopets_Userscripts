@@ -7,7 +7,12 @@
 3.done
 
 <a href="https://github.com/chinccw/Neopets_Userscripts/blob/main/Faerie%20Crossword%20AutoSolver.js"> Faerie Crossword AutoSolver/AutoPlayer </a><br>
-<a href="https://github.com/chinccw/Neopets_Userscripts/blob/main/Neopets-Game-Leave-Page-Confirm.js"> Prevent Leaving/Navigate Page Accidentally </a>
+Automatically solve the crossword for you. it doesn't solve it immediately but you can switch tab and do something else it will still run.<br>
+if it doesn't work try go to https://cors-anywhere.herokuapp.com/ and click "request temporary access". <br>
+if still doesn't work, try press f12 to open developer tools and go console tab to see what went wrong :)<br><br>
+
+<a href="https://github.com/chinccw/Neopets_Userscripts/blob/main/Neopets-Game-Leave-Page-Confirm.js"> Prevent Leaving/Navigate Page Accidentally </a><br>
+ermm.. this will open up a small window asking something like " are you sure you want to leave this page?". something like that.
 
 --some clarification--<br>
 if you just open a neopets game/page and try to close tab immediately, it probably won't prompt you the confirmation message. <br>
