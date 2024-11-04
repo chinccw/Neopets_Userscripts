@@ -8,8 +8,8 @@
 
 <a href="https://github.com/chinccw/Neopets_Userscripts/blob/main/Faerie%20Crossword%20AutoSolver.js"> Faerie Crossword AutoSolver/AutoPlayer </a><br>
 Automatically solve the crossword for you. it doesn't solve it immediately but you can switch tab and do something else it will still run.<br>
-if it doesn't work try go to https://cors-anywhere.herokuapp.com/ and click "request temporary access". <br>
-if still doesn't work, try press f12 to open developer tools and go console tab to see what went wrong :)<br><br>
+if doesn't work probably the proxy server issue, or there is some heavy changes to the crossword/jellyneo website making code not work as intended. <br>
+on crossword page, stop the script from refreshing the page and try press f12 to open developer tools and go console tab to see what went wrong :)<br><br>
 
 <a href="https://github.com/chinccw/Neopets_Userscripts/blob/main/Neopets-Game-Leave-Page-Confirm.js"> Prevent Leaving/Navigate Page Accidentally </a><br>
 ermm.. this will open up a small window asking something like " are you sure you want to leave this page?". something like that.
