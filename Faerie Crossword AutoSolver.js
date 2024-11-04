@@ -9,7 +9,7 @@
 // ==/UserScript==
 
 // if doesn't work probably the proxy server issue, or there is some heavy changes to the crossword/jellyneo website making code not work as intended.
-// try press f12 to open developer tools and go console tab to see what went wrong :)
+// on crossword page, stop the script from refreshing the page and try press f12 to open developer tools and go console tab to see what went wrong :)
 
 (async function() {
     'use strict';
