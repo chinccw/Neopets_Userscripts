@@ -8,8 +8,8 @@
 // @grant        none
 // ==/UserScript==
 
-//if it doesn't work try go to https://cors-anywhere.herokuapp.com/ and click "request temporary access"
-//if still doesn't work try press f12 to open developer tools and go console tab to see what went wrong :)
+// if doesn't work probably the proxy server issue, or there is some heavy changes to the crossword/jellyneo website making code not work as intended.
+// try press f12 to open developer tools and go console tab to see what went wrong :)
 
 (async function() {
     'use strict';
@@ -75,7 +75,7 @@
 
     // Function to search for <div> tags on the external website
     async function searchAndReturnDivsOnExternalSite(externalUrl) {
-        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        const proxyUrl = 'https://corsproxy.io/?';
         const divContents = [];
         try {
             // Fetch the HTML content from the external site
