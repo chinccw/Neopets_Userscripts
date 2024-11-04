@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Neopets Faerie Crossword AutoSolver
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/chinccw/Neopets_Userscripts
 // @author       chinccw
 // @version      1.0
 // @description  Auto-play Faerie Crossword For you
