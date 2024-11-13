@@ -1,25 +1,27 @@
 // ==UserScript==
 // @name         neoquest 2 autobattle
 // @namespace    http://tampermonkey.net/
-// @version      2024-11-06
-// @description  try to take over the world!
-// @author       You
+// @version      2024-11-13
+// @description  https://github.com/chinccw/Neopets_Userscripts
+// @author       chinccw
 // @match        https://www.neopets.com/games/nq2/nq2.phtml*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=neopets.com
 // @grant        none
 // ==/UserScript==
 
-// what this script does 
+// what this script does
 // Auto-Use Potion when below a set Current Health
-// Auto-Move + Auto Battle (Auto-Move Can be Disabled)
-// For Battle, it automatically uses GroupHeal(velm), Obliterate(Mipsy Single-Target Spell) and Normal Attack.
+// Auto-Move + Auto Battle (Can be Disabled separately)
+// For Battle, it automatically uses GroupHeal(velm), Obliterate(Mipsy Single-Target Spell),Quickshot(Talinia Second Spell) and Normal Attack.
+// velm group-heal is extremely unstable, sometimes it heals sometimes it doesn't, i am not sure why either. for now i have comment out the part to check health before heal.
+
 
   (function() {
     'use strict';
     let AllFontTag;
     let AttackButton = document.querySelector('img[src="//images.neopets.com/nq2/x/com_atk.gif"]');
-    let HealthToHeal = 60 ; //set your preferred value here for how low to use potion
-    let MinHPforVelmToHeal = 90; // set your preferred value here
+    let HealthToHeal = 6 ;
+    let MinHPforVelmToHeal = 170;
 
     if ( !localStorage.getItem("AutoAttackStatus") )
     {
@@ -95,6 +97,41 @@ document.body.appendChild(AutoMoveButton);
     function UsePotion()
     {
         //later add more potion here
+        let ConstitutionPotionButton = document.querySelector('a[onclick="setaction(5); setitem(30043); document.ff.submit(); return false;;"]');
+        if (ConstitutionPotionButton)
+        {
+            ConstitutionPotionButton.click();
+            return;
+        }
+
+        let StaminaPotionButton = document.querySelector('a[onclick="setaction(5); setitem(30042); document.ff.submit(); return false;;"]');
+        if (StaminaPotionButton)
+        {
+            StaminaPotionButton.click();
+            return;
+        }
+
+        let VitalityPotionButton = document.querySelector('a[onclick="setaction(5); setitem(30041); document.ff.submit(); return false;;"]');
+        if (VitalityPotionButton)
+        {
+            VitalityPotionButton.click();
+            return;
+        }
+
+         let PotionOfAbundantHealthButton = document.querySelector('a[onclick="setaction(5); setitem(30033); document.ff.submit(); return false;;"]');
+        if (PotionOfAbundantHealthButton)
+        {
+            PotionOfAbundantHealthButton.click();
+            return;
+        }
+
+        let PotionOfGreaterHealthButton = document.querySelector('a[onclick="setaction(5); setitem(30032); document.ff.submit(); return false;;"]');
+        if (PotionOfGreaterHealthButton)
+        {
+            PotionOfGreaterHealthButton.click();
+            return;
+        }
+
          let PotionOfPotentHealthButton = document.querySelector('a[onclick="setaction(5); setitem(30031); document.ff.submit(); return false;;"]');
         if (PotionOfPotentHealthButton)
         {
@@ -228,15 +265,23 @@ document.body.appendChild(AutoMoveButton);
                 setTimeout( function(){EradicateButton.click()} , 500);
                 return;
             }
-            else if (document.querySelector('a[onclick="setaction(9402); document.ff.submit(); return false;"]') )
+            else if(document.querySelector('a[onclick="setaction(9302); document.ff.submit(); return false;"]') )
             {
-                if( RohaneCurrentHP <= MinHPforVelmToHeal || MipsyCurrentHP <= MinHPforVelmToHeal || TaliniaCurrentHP <= MinHPforVelmToHeal || VelmCurrentHP <= MinHPforVelmToHeal )
-                {
+                let TwinTargetButton = document.querySelector('a[onclick="setaction(9302); document.ff.submit(); return false;"]');
+                setTimeout( function(){TwinTargetButton.click()} , 500);
+                return;
+            }
+
+            else if (document.querySelector('a[onclick="setaction(9402); document.ff.submit(); return false;"]') ) //velm group heal
+          //  { console.log("Test1111");
+              //  if( RohaneCurrentHP <= MinHPforVelmToHeal || MipsyCurrentHP <= MinHPforVelmToHeal || TaliniaCurrentHP <= MinHPforVelmToHeal || VelmCurrentHP <= MinHPforVelmToHeal )
+                { console.log("Test2222");
                     let GroupHealingButton = document.querySelector('a[onclick="setaction(9402); document.ff.submit(); return false;"]');
-                    setTimeout( function(){GroupHealingButton.click()} , 500);
+                   GroupHealingButton.click();
+                 console.log("Test3333");
                     return;
                 }
-            }
+         //   }
             // return;///////// FOR TESTING PURPOSE
             setTimeout( function(){ AttackButton.click()} , 500);
             return;
