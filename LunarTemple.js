@@ -43,7 +43,7 @@
         // Output the results
         console.log("Extracted number:", number);
         console.log("Mapped answer:", answer);
-        alert("AngleKreludor " + number + "\nAnswer: " + answer + "https://thedailyneopets.com/articles/solving-lunar-temple-puzzle");
+        alert("AngleKreludor " + number + "\nAnswer: " + answer + " https://thedailyneopets.com/articles/solving-lunar-temple-puzzle");
     } else {
         console.log("Number not found.");
     }
